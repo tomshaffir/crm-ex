@@ -166,9 +166,9 @@ console.log('Express listening on port ' + port);
 if (!inContainer && !inAzure) {
     var opn = require('opn');
 
-    opn('http://localhost:' + port).then(() => {
-        console.log('Browser closed.');
-    }); 
+    // opn('http://localhost:' + port).then(() => {
+    //     console.log('Browser closed.');
+    // }); 
 }
 
 
