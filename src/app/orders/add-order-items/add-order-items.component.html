@@ -1,0 +1,29 @@
+<form style="width: 100%;">
+    <div class="add-item-container">
+        <mat-form-field class="form-field">
+            <mat-label>Add new item to cart then press enter</mat-label>
+            <input [ngModelOptions]="{standalone: true}" (keyup.enter)="AddItem()" matInput [(ngModel)]="inputValue">
+            <span (click)="AddItem()" class="material-icons">
+                control_point
+            </span>
+        </mat-form-field>
+    </div>
+</form>
+
+<div class="chip-list-container">
+    <mat-chip-list aria-label="Fish selection">
+        <mat-chip *ngFor="let item of addedItemsList;let i = index" color="primary" selected>{{item.productName}}
+            {{item.itemCost}}$<mat-icon (click)="RemoveItem(i)" matChipRemove>x</mat-icon>
+        </mat-chip>
+    </mat-chip-list>
+</div>
+
+<br>
+
+<footer>
+    <div class="buttons-container">
+        <button [disabled]="addedItemsList.length === 0" (click)="DoneAddingItems()" mat-button
+            color="primary">Done</button>
+        <button (click)="CloseDialog()" mat-button color="accent">Cancel</button>
+    </div>
+</footer>

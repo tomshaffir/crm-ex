@@ -1,0 +1,16 @@
+.add-item-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-field {
+    width: 80%;
+}
+
+.material-icons{
+    float: right;
+    position: absolute;
+    color: rgb(68, 38, 202);
+    cursor: pointer;
+}
